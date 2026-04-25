@@ -4,7 +4,6 @@ import {
   ChevronDown,
   CreditCard,
   FileBarChart2,
-  Headphones,
   LayoutDashboard,
   Package,
   Settings,
@@ -85,14 +84,6 @@ export function Sidebar({
 
   const renderFooter = () => (
     <>
-      <div className="sidebar-support-card mb-5 rounded-2xl border border-white/10 bg-[#101722] p-4">
-        <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03]">
-          <Headphones className="h-4 w-4 text-slate-200" />
-        </div>
-        <p className="text-sm font-semibold text-white">Precisa de ajuda?</p>
-        <p className="mt-1 text-sm text-slate-400">Fale com o suporte</p>
-      </div>
-
       <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#151c28] px-4 py-3">
         <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-fuchsia-500 to-violet-400 text-sm font-semibold text-white">
           AD
@@ -108,7 +99,7 @@ export function Sidebar({
 
   return (
     <>
-    <aside className="fixed inset-y-0 left-0 hidden w-[252px] shrink-0 overflow-y-auto border-r border-white/8 bg-[#0a0f17] xl:flex xl:flex-col">
+    <aside className="fixed inset-y-0 left-0 hidden w-[252px] shrink-0 border-r border-white/8 bg-[#0a0f17] xl:flex xl:flex-col">
       <div className="sidebar-brand border-b border-white/8 px-7 py-7">
         {renderBrand()}
       </div>

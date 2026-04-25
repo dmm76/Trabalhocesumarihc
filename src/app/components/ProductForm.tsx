@@ -88,6 +88,7 @@ export function ProductForm({
   const slugStatus = slug.length >= 3 ? 'success' : 'default';
   const skuStatus = sku.length >= 3 ? 'success' : 'default';
   const barcodeStatus = barcode.length >= 8 ? 'success' : 'default';
+  const priceStatus = price.trim().length > 0 ? 'success' : 'default';
 
   const handleProductNameChange = (value: string) => {
     onProductNameChange(value);
@@ -189,8 +190,8 @@ export function ProductForm({
             value={price}
             onChange={onPriceChange}
             required
-            status="success"
-            message="Preço válido."
+            status={priceStatus}
+            message={priceStatus === 'success' ? 'Preço válido.' : undefined}
             icon={<span className="text-base text-slate-300">R$</span>}
           />
 
