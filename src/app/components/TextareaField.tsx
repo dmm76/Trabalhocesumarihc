@@ -41,7 +41,7 @@ export function TextareaField({
           required={required}
           maxLength={maxLength}
           aria-describedby={showCounter && maxLength ? counterId : undefined}
-          className="min-h-[122px] w-full resize-none rounded-[calc(1rem-2px)] bg-transparent px-4 py-3 text-[15px] text-white outline-none placeholder:text-slate-500"
+          className="min-h-[122px] w-full resize-none rounded-[calc(1rem-2px)] bg-transparent px-4 py-3 text-[15px] text-white outline-none placeholder:text-slate-400"
         />
       </div>
 

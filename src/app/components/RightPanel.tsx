@@ -231,7 +231,7 @@ export function RightPanel({
                   value={quantity}
                   onChange={(event) => onQuantityChange(event.target.value)}
                   disabled={!controlStock}
-                  className="w-full bg-transparent text-base text-white outline-none disabled:cursor-not-allowed disabled:text-slate-500 [appearance:textfield]"
+                  className="w-full bg-transparent text-base text-white outline-none disabled:cursor-not-allowed disabled:text-slate-400 [appearance:textfield]"
                 />
 
                 <div className="ml-3 flex items-center gap-2">
@@ -280,7 +280,7 @@ export function RightPanel({
                   value={minQuantity}
                   onChange={(event) => onMinQuantityChange(event.target.value)}
                   disabled={!controlStock}
-                  className="w-full bg-transparent text-base text-white outline-none disabled:cursor-not-allowed disabled:text-slate-500 [appearance:textfield]"
+                  className="w-full bg-transparent text-base text-white outline-none disabled:cursor-not-allowed disabled:text-slate-400 [appearance:textfield]"
                 />
 
                 <div className="ml-3 flex items-center gap-2">
@@ -431,7 +431,7 @@ export function RightPanel({
               'h-14 rounded-2xl text-base font-semibold text-white transition sm:text-lg',
               canSave
                 ? 'bg-gradient-to-r from-emerald-500 to-green-400 hover:brightness-105'
-                : 'cursor-not-allowed border border-white/10 bg-white/8 text-slate-500',
+                : 'cursor-not-allowed border border-white/10 bg-white/8 text-slate-400',
             ].join(' ')}
           >
             {isSaving ? 'Salvando...' : canSave ? 'Salvar produto' : 'Complete os obrigatórios'}
@@ -464,7 +464,7 @@ export function RightPanel({
           </div>
         )}
 
-        <p className="text-sm text-slate-500">Último salvamento: ainda não realizado nesta edição</p>
+        <p className="text-sm text-slate-400">Último salvamento: ainda não realizado nesta edição</p>
       </div>
     </aside>
   );

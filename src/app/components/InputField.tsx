@@ -39,7 +39,7 @@ export function InputField({
   const messageClasses = {
     success: 'text-emerald-400',
     error: 'text-rose-400',
-    default: 'text-slate-500',
+    default: 'text-slate-400',
   };
 
   return (
@@ -66,7 +66,7 @@ export function InputField({
           aria-describedby={message || helperText ? descriptionId : undefined}
           className={[
             'h-14 w-full rounded-2xl bg-[#131923] px-4 text-[15px] text-white outline-none transition',
-            'placeholder:text-slate-500 focus:ring-4 disabled:cursor-not-allowed disabled:border-white/5 disabled:bg-[#10151d] disabled:text-slate-500',
+            'placeholder:text-slate-400 focus:ring-4 disabled:cursor-not-allowed disabled:border-white/5 disabled:bg-[#10151d] disabled:text-slate-400',
             icon ? 'pl-12' : '',
             statusClasses[status],
           ].join(' ')}
@@ -84,7 +84,7 @@ export function InputField({
       </div>
 
       {message ? <p id={descriptionId} className={`text-sm ${messageClasses[status]}`}>{message}</p> : null}
-      {!message && helperText ? <p id={descriptionId} className="text-sm text-slate-500">{helperText}</p> : null}
+      {!message && helperText ? <p id={descriptionId} className="text-sm text-slate-400">{helperText}</p> : null}
     </div>
   );
 }

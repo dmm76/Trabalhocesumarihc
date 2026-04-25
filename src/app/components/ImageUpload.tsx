@@ -58,7 +58,7 @@ export function ImageUpload() {
               />
             ) : null}
 
-            <div className="absolute left-3 top-3 rounded-full bg-emerald-500 px-3 py-1 text-xs font-semibold text-white">
+            <div className="absolute left-3 top-3 rounded-full bg-emerald-400 px-3 py-1 text-xs font-semibold text-[#062113]">
               Principal
             </div>
 
@@ -109,7 +109,7 @@ export function ImageUpload() {
         </div>
       </div>
 
-      <p className="text-sm text-slate-500">
+      <p className="text-sm text-slate-400">
         Até 5 imagens no total: 1 principal e até 4 complementares. Formatos aceitos: PNG, JPG,
         AVIF ou WEBP.
         Tamanho máximo: 5MB por imagem.

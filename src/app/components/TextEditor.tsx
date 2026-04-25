@@ -74,7 +74,7 @@ export function TextEditor({
           required={required}
           maxLength={maxLength}
           aria-describedby={maxLength ? counterId : undefined}
-          className="min-h-[118px] w-full resize-none bg-transparent px-4 py-3 text-[15px] text-white outline-none placeholder:text-slate-500"
+          className="min-h-[118px] w-full resize-none bg-transparent px-4 py-3 text-[15px] text-white outline-none placeholder:text-slate-400"
         />
       </div>
 
