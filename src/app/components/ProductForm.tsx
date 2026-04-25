@@ -17,6 +17,8 @@ interface ProductFormProps {
   onFiscalClassChange: (value: string) => void;
   price: string;
   onPriceChange: (value: string) => void;
+  promoEnabled: boolean;
+  onPromoEnabledChange: (value: boolean) => void;
   promoPrice: string;
   onPromoPriceChange: (value: string) => void;
   shortDescription: string;
@@ -29,18 +31,23 @@ function Section({
   icon: Icon,
   title,
   children,
+  action,
 }: {
   icon: typeof Package2;
   title: string;
   children: React.ReactNode;
+  action?: React.ReactNode;
 }) {
   return (
     <section className="rounded-3xl border border-white/8 bg-[#171d27]/92 p-5 shadow-[0_10px_30px_rgba(0,0,0,0.18)] sm:p-6">
-      <div className="mb-5 flex items-center gap-3">
-        <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-emerald-500/20 bg-emerald-500/8">
-          <Icon className="h-4 w-4 text-emerald-400" />
+      <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-center gap-3">
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-emerald-500/20 bg-emerald-500/8">
+            <Icon className="h-4 w-4 text-emerald-400" />
+          </div>
+          <h3 className="text-lg font-semibold tracking-[-0.02em] text-white sm:text-xl">{title}</h3>
         </div>
-        <h3 className="text-xl font-semibold tracking-[-0.02em] text-white">{title}</h3>
+        {action}
       </div>
       {children}
     </section>
@@ -60,6 +67,8 @@ export function ProductForm({
   onFiscalClassChange,
   price,
   onPriceChange,
+  promoEnabled,
+  onPromoEnabledChange,
   promoPrice,
   onPromoPriceChange,
   shortDescription,
@@ -100,7 +109,7 @@ export function ProductForm({
           />
         </div>
 
-        <div className="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-[1.1fr_1.1fr_0.9fr]">
+        <div className="mt-4 grid gap-4 md:grid-cols-2 2xl:grid-cols-[1.1fr_1.1fr_0.9fr]">
           <InputField
             label="SKU"
             value={sku}
@@ -122,14 +131,43 @@ export function ProductForm({
               Classe fiscal
             </label>
             <div className="flex h-14 items-center justify-between rounded-2xl border border-white/10 bg-[#131923] px-4 text-sm text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]">
-              <span>{fiscalClass}</span>
-              <ChevronDown className="h-4 w-4 text-slate-500" />
+              <span className="truncate">{fiscalClass}</span>
+              <ChevronDown className="ml-3 h-4 w-4 shrink-0 text-slate-500" />
             </div>
           </div>
         </div>
       </Section>
 
-      <Section icon={DollarSign} title="Preços">
+      <Section
+        icon={DollarSign}
+        title="Preços"
+        action={
+          <div className="flex items-center gap-3 rounded-2xl border border-white/8 bg-[#131923] px-4 py-2.5">
+            <div className="text-right">
+              <p className="text-sm font-medium text-white">Usar preço promocional</p>
+              <p className="text-xs text-slate-400">
+                {promoEnabled ? 'Promoção ativa.' : 'Acione para usar.'}
+              </p>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => onPromoEnabledChange(!promoEnabled)}
+              className={[
+                'relative h-7 w-12 rounded-full transition',
+                promoEnabled ? 'bg-emerald-400' : 'bg-slate-700',
+              ].join(' ')}
+            >
+              <span
+                className={[
+                  'absolute top-1 h-5 w-5 rounded-full bg-white transition',
+                  promoEnabled ? 'left-6' : 'left-1',
+                ].join(' ')}
+              />
+            </button>
+          </div>
+        }
+      >
         <div className="grid gap-4 lg:grid-cols-2">
           <InputField
             label="Preço de venda"
@@ -146,13 +184,18 @@ export function ProductForm({
             value={promoPrice}
             onChange={onPromoPriceChange}
             icon={<span className="text-base text-slate-300">R$</span>}
-            helperText="Deixe em branco para não usar promoção."
+            disabled={!promoEnabled}
+            helperText={
+              promoEnabled
+                ? 'Preço promocional ativo no sistema.'
+                : 'Acione o botão para usar preço promocional.'
+            }
           />
         </div>
       </Section>
 
       <Section icon={FileText} title="Conteúdo">
-        <div className="grid gap-4 lg:grid-cols-[0.9fr_1.35fr]">
+        <div className="grid gap-4 xl:grid-cols-[0.9fr_1.35fr]">
           <TextareaField
             label="Resumo curto"
             value={shortDescription}

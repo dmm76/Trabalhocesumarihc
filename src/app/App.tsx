@@ -17,6 +17,7 @@ export default function App() {
   const [fiscalClass, setFiscalClass] = useState('NCM 8517.12.31');
   const [price, setPrice] = useState('3.499,00');
   const [promoPrice, setPromoPrice] = useState('2.999,00');
+  const [promoEnabled, setPromoEnabled] = useState(true);
   const [shortDescription, setShortDescription] = useState(
     'Smartphone Samsung Galaxy S24 com 256GB de armazenamento.',
   );
@@ -89,8 +90,8 @@ export default function App() {
         <div className="ml-0 flex min-h-screen min-w-0 flex-1 flex-col xl:ml-[252px]">
           <Topbar />
 
-          <main className="flex-1 overflow-y-auto px-4 pb-6 pt-3 sm:px-6">
-            <div className="mx-auto flex max-w-[1480px] flex-col gap-5 xl:flex-row">
+          <main className="flex-1 overflow-y-auto px-3 pb-6 pt-3 sm:px-4 lg:px-6">
+            <div className="mx-auto flex max-w-[1480px] flex-col gap-5 2xl:flex-row">
               <div className="min-w-0 flex-1">
                 <ProductForm
                   productName={productName}
@@ -105,6 +106,8 @@ export default function App() {
                   onFiscalClassChange={setFiscalClass}
                   price={price}
                   onPriceChange={setPrice}
+                  promoEnabled={promoEnabled}
+                  onPromoEnabledChange={setPromoEnabled}
                   promoPrice={promoPrice}
                   onPromoPriceChange={setPromoPrice}
                   shortDescription={shortDescription}

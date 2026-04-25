@@ -46,7 +46,7 @@ export function Sidebar({ activeMenu, onMenuChange }: SidebarProps) {
         </div>
       </div>
 
-      <nav className="flex-1 px-4 py-6">
+      <nav className="flex-1 px-4 pt-6">
         <div className="space-y-1.5">
           {menuItems.map((item) => {
             const Icon = item.icon;
@@ -72,7 +72,7 @@ export function Sidebar({ activeMenu, onMenuChange }: SidebarProps) {
         </div>
       </nav>
 
-      <div className="px-4 pb-5">
+      <div className="mt-auto px-4 pb-4 pt-8">
         <div className="mb-5 rounded-2xl border border-white/10 bg-[#101722] p-4">
           <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03]">
             <Headphones className="h-4 w-4 text-slate-200" />

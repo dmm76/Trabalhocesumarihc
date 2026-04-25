@@ -43,13 +43,13 @@ export function ImageUpload() {
 
   return (
     <div className="space-y-4">
-      <div className="grid gap-4 lg:grid-cols-[1.05fr_2.2fr]">
+      <div className="grid gap-4 xl:grid-cols-[1.05fr_2.2fr]">
         <div>
           <p className="mb-2 text-sm font-medium text-slate-200">
             Imagem principal <span className="text-rose-400">*</span>
           </p>
 
-          <div className="relative h-[118px] overflow-hidden rounded-2xl border border-emerald-500/40 bg-[#131923]">
+          <div className="relative h-[180px] overflow-hidden rounded-2xl border border-emerald-500/40 bg-[#131923] sm:h-[240px] xl:h-[118px]">
             {mainImage ? (
               <img
                 src={mainImage.image}
@@ -77,11 +77,11 @@ export function ImageUpload() {
         <div>
           <p className="mb-2 text-sm font-medium text-slate-200">Galeria de imagens (até 6)</p>
 
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-5">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             {gallery.slice(1).map((item) => (
               <div
                 key={item.id}
-                className="relative h-[86px] overflow-hidden rounded-2xl border border-white/10 bg-[#131923]"
+                className="relative h-[96px] overflow-hidden rounded-2xl border border-white/10 bg-[#131923] sm:h-[112px] xl:h-[86px]"
               >
                 <img src={item.image} alt={item.alt} className="h-full w-full object-cover" />
 
@@ -97,7 +97,7 @@ export function ImageUpload() {
 
             <button
               type="button"
-              className="flex h-[86px] flex-col items-center justify-center rounded-2xl border border-dashed border-white/15 bg-[#131923] text-slate-400 transition hover:border-emerald-400/35 hover:text-white"
+              className="flex h-[96px] flex-col items-center justify-center rounded-2xl border border-dashed border-white/15 bg-[#131923] px-3 text-center text-slate-400 transition hover:border-emerald-400/35 hover:text-white sm:h-[112px] xl:h-[86px]"
             >
               <Plus className="mb-2 h-5 w-5" />
               <span className="text-sm">Adicionar imagem</span>

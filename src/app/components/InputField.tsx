@@ -12,6 +12,7 @@ interface InputFieldProps {
   type?: string;
   required?: boolean;
   icon?: ReactNode;
+  disabled?: boolean;
 }
 
 export function InputField({
@@ -25,6 +26,7 @@ export function InputField({
   type = 'text',
   required = false,
   icon,
+  disabled = false,
 }: InputFieldProps) {
   const statusClasses = {
     success: 'border-emerald-500/70 focus:border-emerald-400 focus:ring-emerald-500/15',
@@ -55,9 +57,10 @@ export function InputField({
           value={value}
           onChange={(event) => onChange(event.target.value)}
           placeholder={placeholder}
+          disabled={disabled}
           className={[
             'h-14 w-full rounded-2xl bg-[#131923] px-4 text-[15px] text-white outline-none transition',
-            'placeholder:text-slate-500 focus:ring-4',
+            'placeholder:text-slate-500 focus:ring-4 disabled:cursor-not-allowed disabled:border-white/5 disabled:bg-[#10151d] disabled:text-slate-500',
             icon ? 'pl-12' : '',
             statusClasses[status],
           ].join(' ')}
