@@ -31,14 +31,14 @@ export function Sidebar({ activeMenu, onMenuChange }: SidebarProps) {
   ];
 
   return (
-    <aside className="hidden w-[252px] shrink-0 border-r border-white/8 bg-[#0a0f17] xl:flex xl:flex-col">
+    <aside className="fixed inset-y-0 left-0 hidden w-[252px] shrink-0 border-r border-white/8 bg-[#0a0f17] xl:flex xl:flex-col">
       <div className="border-b border-white/8 px-7 py-7">
         <div className="flex items-center gap-3">
           <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-emerald-500/25 bg-emerald-500/10">
             <ChartColumn className="h-5 w-5 text-emerald-400" />
           </div>
-          <div>
-            <h2 className="text-[2rem] font-semibold leading-none tracking-[-0.04em] text-white">
+          <div className="min-w-0">
+            <h2 className="whitespace-nowrap text-[1.75rem] font-semibold leading-none tracking-[-0.04em] text-white">
               E-commerce
             </h2>
             <p className="mt-1 text-sm text-slate-400">Painel administrativo</p>

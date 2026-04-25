@@ -86,7 +86,7 @@ export default function App() {
       <div className="relative flex min-h-screen">
         <Sidebar activeMenu={activeMenu} onMenuChange={setActiveMenu} />
 
-        <div className="flex min-h-screen min-w-0 flex-1 flex-col">
+        <div className="ml-0 flex min-h-screen min-w-0 flex-1 flex-col xl:ml-[252px]">
           <Topbar />
 
           <main className="flex-1 overflow-y-auto px-4 pb-6 pt-3 sm:px-6">
