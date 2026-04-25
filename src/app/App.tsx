@@ -116,7 +116,7 @@ export default function App() {
           <Topbar onOpenMenu={() => setIsMobileMenuOpen(true)} />
 
           <main className="flex-1 overflow-y-auto px-3 pb-6 pt-3 sm:px-4 lg:px-6">
-            <div className="mx-auto flex max-w-[1480px] flex-col gap-5 2xl:flex-row">
+            <div className="mx-auto flex max-w-[1480px] flex-col gap-5 xl:flex-row">
               <div className="min-w-0 flex-1">
                 <ProductForm
                   productName={productName}

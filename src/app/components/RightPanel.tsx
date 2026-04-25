@@ -144,8 +144,8 @@ export function RightPanel({
   };
 
   return (
-    <aside className="w-full shrink-0 space-y-5 2xl:w-[420px]">
-      <div className="hidden rounded-3xl border border-white/10 bg-[#101722] p-5 shadow-[0_10px_30px_rgba(0,0,0,0.16)] 2xl:block">
+    <aside className="w-full shrink-0 space-y-5 xl:w-[360px] 2xl:w-[420px]">
+      <div className="hidden rounded-3xl border border-white/10 bg-[#101722] p-5 shadow-[0_10px_30px_rgba(0,0,0,0.16)] xl:block">
         <div className="mb-4 flex items-center justify-between gap-4">
           <div>
             <p className="text-sm font-medium text-slate-300">Progresso do cadastro</p>
@@ -169,7 +169,7 @@ export function RightPanel({
       </div>
 
       {showSavedNotice ? (
-      <div className="hidden rounded-3xl border border-emerald-500/25 bg-[#14321f] p-5 text-white shadow-[0_18px_50px_rgba(16,185,129,0.08)] 2xl:block">
+      <div className="hidden rounded-3xl border border-emerald-500/25 bg-[#14321f] p-5 text-white shadow-[0_18px_50px_rgba(16,185,129,0.08)] xl:block">
         <div className="flex items-start gap-4">
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-emerald-400/20 text-emerald-200">
             <CheckCircle2 className="h-5 w-5" />
@@ -370,7 +370,7 @@ export function RightPanel({
       </Panel>
 
       <div className="space-y-4 pt-1">
-        <div className="rounded-3xl border border-white/10 bg-[#101722] p-5 shadow-[0_10px_30px_rgba(0,0,0,0.16)] 2xl:hidden">
+        <div className="rounded-3xl border border-white/10 bg-[#101722] p-5 shadow-[0_10px_30px_rgba(0,0,0,0.16)] xl:hidden">
           <div className="mb-4 flex items-center justify-between gap-4">
             <div>
               <p className="text-sm font-medium text-slate-300">Progresso do cadastro</p>
@@ -394,7 +394,7 @@ export function RightPanel({
         </div>
 
         {showSavedNotice ? (
-          <div className="rounded-3xl border border-emerald-500/25 bg-[#14321f] p-5 text-white shadow-[0_18px_50px_rgba(16,185,129,0.08)] 2xl:hidden">
+          <div className="rounded-3xl border border-emerald-500/25 bg-[#14321f] p-5 text-white shadow-[0_18px_50px_rgba(16,185,129,0.08)] xl:hidden">
             <div className="flex items-start gap-4">
               <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-emerald-400/20 text-emerald-200">
                 <CheckCircle2 className="h-5 w-5" />
@@ -415,7 +415,7 @@ export function RightPanel({
           </div>
         ) : null}
 
-        <div className="grid gap-3 sm:grid-cols-2 2xl:grid-cols-1">
+        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
           <button
             type="button"
             className="h-14 rounded-2xl border border-white/15 bg-transparent text-base font-medium text-white transition hover:bg-white/[0.03] sm:text-lg"

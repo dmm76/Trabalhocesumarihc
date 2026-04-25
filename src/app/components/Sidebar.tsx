@@ -44,7 +44,7 @@ export function Sidebar({
   };
 
   const renderMenuItems = () => (
-    <div className="space-y-1.5">
+    <div className="space-y-1 min-[860px]:space-y-1.5">
       {menuItems.map((item) => {
         const Icon = item.icon;
         const isActive = activeMenu === item.id;
@@ -55,7 +55,7 @@ export function Sidebar({
             type="button"
             onClick={() => handleMenuChange(item.id)}
             className={[
-              'flex w-full items-center gap-3 rounded-2xl px-4 py-3 text-left text-sm transition',
+              'flex w-full items-center gap-3 rounded-2xl px-4 py-2.5 text-left text-sm transition min-[860px]:py-3',
               isActive
                 ? 'border border-emerald-500/20 bg-emerald-500/10 text-emerald-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]'
                 : 'text-slate-400 hover:bg-white/[0.03] hover:text-white',
@@ -85,7 +85,7 @@ export function Sidebar({
 
   const renderFooter = () => (
     <>
-      <div className="mb-5 rounded-2xl border border-white/10 bg-[#101722] p-4">
+      <div className="sidebar-support-card mb-5 rounded-2xl border border-white/10 bg-[#101722] p-4">
         <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03]">
           <Headphones className="h-4 w-4 text-slate-200" />
         </div>
@@ -108,16 +108,16 @@ export function Sidebar({
 
   return (
     <>
-    <aside className="fixed inset-y-0 left-0 hidden w-[252px] shrink-0 border-r border-white/8 bg-[#0a0f17] xl:flex xl:flex-col">
-      <div className="border-b border-white/8 px-7 py-7">
+    <aside className="fixed inset-y-0 left-0 hidden w-[252px] shrink-0 overflow-y-auto border-r border-white/8 bg-[#0a0f17] xl:flex xl:flex-col">
+      <div className="sidebar-brand border-b border-white/8 px-7 py-7">
         {renderBrand()}
       </div>
 
-      <nav className="flex-1 px-4 pt-6">
+      <nav className="sidebar-nav flex-1 px-4 pt-6">
         {renderMenuItems()}
       </nav>
 
-      <div className="mt-auto px-4 pb-4 pt-8">
+      <div className="sidebar-footer mt-auto px-4 pb-4 pt-8">
         {renderFooter()}
       </div>
     </aside>
